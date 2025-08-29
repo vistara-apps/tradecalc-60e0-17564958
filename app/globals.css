@@ -1,0 +1,76 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 240 86% 50%;
+    --accent: 171 76% 43%;
+    --bg: 240 7% 95%;
+    --surface: 0 0% 100%;
+    --text-primary: 240 11% 20%;
+    --text-secondary: 240 11% 40%;
+  }
+  
+  body {
+    @apply bg-bg text-text-primary;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md transition-all duration-200 font-medium shadow-sm hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-surface border border-primary/20 hover:border-primary/40 text-text-primary px-6 py-3 rounded-md transition-all duration-200 font-medium;
+  }
+  
+  .btn-destructive {
+    @apply bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-md transition-all duration-200 font-medium;
+  }
+  
+  .card {
+    @apply bg-surface border border-gray-200 rounded-lg p-6 shadow-card;
+  }
+  
+  .card-outline {
+    @apply bg-surface border-2 border-primary/20 rounded-lg p-6 hover:border-primary/40 transition-colors duration-200;
+  }
+  
+  .input-group {
+    @apply relative;
+  }
+  
+  .input-field {
+    @apply bg-surface border border-gray-300 rounded-md px-4 py-3 text-text-primary placeholder:text-text-secondary focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/10 transition-colors duration-200 w-full;
+  }
+  
+  .input-label {
+    @apply block text-sm font-medium text-text-primary mb-2;
+  }
+  
+  .tab-button {
+    @apply px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200;
+  }
+  
+  .tab-active {
+    @apply bg-primary text-white;
+  }
+  
+  .tab-inactive {
+    @apply text-text-secondary hover:text-text-primary hover:bg-gray-100;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
